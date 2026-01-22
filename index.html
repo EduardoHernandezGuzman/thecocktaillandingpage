@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0B1220" />
+  <title>TCK ONG · Landing Sandbox</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+  />
+
+  <!-- Tailwind Library (compiled) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+  />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="text-gray-800 antialiased">
+  <!-- Navigation -->
+  <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <!-- Nav Left Side -->
+      <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <a
+          class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
+          href="#"
+          aria-label="TCK ONG"
+        >
+          TCK ONG
+        </a>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <button
+          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          type="button"
+          aria-label="Toggle navigation"
+          onclick="toggleNavbar('example-collapse-navbar')"
+        >
+          <i class="text-white fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Collapsible Nav Content -->
+      <div
+        id="example-collapse-navbar"
+        class="hidden lg:flex lg:flex-grow items-center bg-white lg:bg-transparent lg:shadow-none"
+      >
+        <!-- Nav Right Side -->
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <li class="flex items-center">
+            <a
+              class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="#proyecto"
+            >
+              <i class="lg:text-gray-300 text-gray-500 fas fa-seedling text-lg leading-lg"></i>
+              <span class="lg:hidden inline-block ml-2">Proyecto</span>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a
+              class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="#equipo"
+            >
+              <i class="lg:text-gray-300 text-gray-500 fas fa-users text-lg leading-lg"></i>
+              <span class="lg:hidden inline-block ml-2">Equipo</span>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a
+              class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+              href="#contacto"
+            >
+              <i class="lg:text-gray-300 text-gray-500 fas fa-hand-holding-heart text-lg leading-lg"></i>
+              <span class="lg:hidden inline-block ml-2">Apóyanos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End of Navigation -->
+
+  <!-- Splash Page -->
+  <main>
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+      <!-- Background Image -->
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="background: url(https://images.unsplash.com/photo-1525838134388-afc6d22e4634?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&auto=format&fit=crop&w=1170)"
+        aria-hidden="true"
+      >
+        <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+      </div>
+
+      <!-- Text Over Main Background -->
+      <div class="container relative mx-auto">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto text-center">
+            <div class="pr-0 lg:pr-12">
+              <h1 class="text-white font-semibold text-5xl" data-aos="fade-up">
+                Una ONG ficticia. Un laboratorio real.
+              </h1>
+              <p class="mt-4 text-lg text-gray-300" data-aos="fade-right" data-aos-delay="600">
+                <strong>TCK ONG</strong> es una landing “sandbox” para probar ideas: analítica, experimentación, UX, chatbots y medición.
+                Aquí no salvamos el mundo (todavía), pero sí salvamos dashboards y aprendizajes.
+              </p>
+
+              <p class="mt-4 text-xs text-gray-300 opacity-75" data-aos="fade-in" data-aos-delay="900">
+                Nota: esta web es un entorno de pruebas para instrumentación (GTM/GA4) y experimentos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polygon Shape -->
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px; transform: translateZ(0);"
+        aria-hidden="true"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- End of Splash Page -->
+
+    <!-- Services / Pillars Section -->
+    <section id="proyecto" class="pb-20 bg-gray-300 -mt-24">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <!-- Card 1 -->
+          <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center" data-aos="fade-right" data-aos-delay="800">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div class="px-4 py-5 flex-auto">
+                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h6 class="text-xl font-semibold">Medición impecable</h6>
+                <p class="mt-2 mb-4 text-gray-600">
+                  Eventos claros, naming consistente y una base lista para GTM/GA4. Porque “no medimos” no es una opción.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="w-full md:w-4/12 px-4 text-center" data-aos="fade-up" data-aos-delay="1000">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div class="px-4 py-5 flex-auto">
+                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
+                  <i class="fas fa-flask"></i>
+                </div>
+                <h6 class="text-xl font-semibold">Experimentación rápida</h6>
+                <p class="mt-2 mb-4 text-gray-600">
+                  Un sitio sencillo para lanzar variantes, testear hipótesis y aprender sin depender de veinte repos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pt-6 w-full md:w-4/12 px-4 text-center" data-aos="fade-left" data-aos-delay="1200">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div class="px-4 py-5 flex-auto">
+                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h6 class="text-xl font-semibold">UX + Chatbots</h6>
+                <p class="mt-2 mb-4 text-gray-600">
+                  Espacio para integrar chatbots, componentes y micro-interacciones… sin romper nada y con control total.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Box + Card -->
+        <div class="flex flex-wrap items-center mt-32">
+          <!-- Text -->
+          <div class="w-full md:w-5/12 px-4 mr-auto ml-auto" data-aos="zoom-in-right">
+            <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+              <i class="fas fa-hand-holding-heart text-xl"></i>
+            </div>
+            <h3 class="text-3xl mb-2 font-semibold leading-normal">
+              Pequeños cambios. Grandes aprendizajes.
+            </h3>
+            <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+              Esta landing está pensada para iterar: cambiar un titular, mover un CTA, añadir un chatbot o instrumentar un evento.
+              Todo con una base ligera y entendible.
+            </p>
+            <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
+              El objetivo no es “la ONG perfecta”, sino un entorno donde practicar buenas decisiones de medición y producto.
+            </p>
+            <a href="#equipo" class="font-bold text-gray-800 mt-8">
+              Conoce al equipo →
+            </a>
+          </div>
+
+          <!-- Image Card -->
+          <div class="w-full md:w-4/12 px-4 mr-auto ml-auto" data-aos="flip-left" data-aos-delay="900">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-orange-500">
+              <img
+                alt="Voluntariado ficticio"
+                src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&auto=format&fit=crop&w=1025"
+                class="w-full align-middle rounded-t-lg"
+              />
+              <blockquote class="relative p-8 mb-4">
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 583 95"
+                  class="absolute left-0 w-full block"
+                  style="height: 95px; top: -94px;"
+                  aria-hidden="true"
+                >
+                  <polygon points="-30,95 583,95 583,65" class="text-orange-500 fill-current"></polygon>
+                </svg>
+
+                <h4 class="text-xl font-bold text-white">
+                  Transparencia por defecto
+                </h4>
+                <p class="text-md font-light mt-2 text-white">
+                  Si no puedes explicar qué se mide y por qué, probablemente estás midiendo mal. Aquí lo dejamos claro y versionado.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="relative py-20">
+      <div
+        class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+        style="height: 80px; transform: translateZ(0);"
+        aria-hidden="true"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full md:w-4/12 ml-auto mr-auto px-4" data-aos="flip-right" data-aos-delay="800">
+            <img
+              alt="Impacto (ficticio)"
+              class="max-w-full rounded-lg shadow-lg"
+              src="https://images.unsplash.com/photo-1520975916090-3105956dac38?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&auto=format&fit=crop&w=687"
+            />
+          </div>
+
+          <div class="w-full md:w-5/12 ml-auto mr-auto px-4" data-aos="zoom-in-right">
+            <div class="md:pr-12">
+              <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
+                <i class="fas fa-rocket text-xl"></i>
+              </div>
+
+              <h3 class="text-3xl font-semibold">Una ONG “en beta”</h3>
+              <p class="mt-4 text-lg leading-relaxed text-gray-600">
+                TCK ONG nace como un prototipo: cada sección es una excusa para probar tracking, accesibilidad, copy y performance.
+                Si algo cambia… es porque estamos aprendiendo.
+              </p>
+
+              <ul class="list-none mt-6">
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <h4 class="text-gray-600">Eventos con naming consistente</h4>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
+                        <i class="fas fa-bullseye"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <h4 class="text-gray-600">CTAs pensados para test A/B</h4>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3">
+                        <i class="fas fa-shield-alt"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <h4 class="text-gray-600">Base simple, fácil de auditar</h4>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipo" class="pt-20 pb-48">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center mb-24">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold">El equipo</h2>
+            <p class="text-lg leading-relaxed m-4 text-gray-600">
+              Somos dos Analytics Engineers construyendo una landing mínima para probar instrumentación, experimentación y buenas prácticas.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center">
+          <!-- Eduardo -->
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4" data-aos="fade-in">
+            <div class="px-6">
+              <img
+                alt="Eduardo"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                class="shadow-lg rounded-full max-w-full mx-auto"
+                style="max-width: 120px;"
+              />
+              <div class="pt-6 text-center">
+                <h5 class="text-xl font-bold">Eduardo Hernández</h5>
+                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">Analytics Engineer</p>
+                <div class="mt-6">
+                  <a
+                    class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                    href="https://github.com/EduardoHernandezGuzman/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub de Eduardo"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                    href="https://www.linkedin.com/in/eduardo-hernandez-guzman/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn de Eduardo"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Antonino -->
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4" data-aos="fade-in" data-aos-delay="200">
+            <div class="px-6">
+              <img
+                alt="Antonino"
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                class="shadow-lg rounded-full max-w-full mx-auto"
+                style="max-width: 120px;"
+              />
+              <div class="pt-6 text-center">
+                <h5 class="text-xl font-bold">Antonino Lazaro</h5>
+                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">Analytics Engineer</p>
+                <div class="mt-6">
+                  <a
+                    class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                    href="https://github.com/LazaroAntonino"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub de Antonino"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 inline-flex items-center justify-center"
+                    href="https://www.linkedin.com/in/antonino-lazaro-nu%C3%B1ez/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn de Antonino"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Support Section -->
+    <section id="contacto" class="pb-20 relative block bg-gray-900">
+      <div
+        class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+        style="height: 80px; transform: translateZ(0);"
+        aria-hidden="true"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon class="text-gray-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+
+      <div class="container mx-auto px-4 lg:pt-24 lg:pb-32">
+        <div class="flex flex-wrap text-center justify-center">
+          <div class="w-full lg:w-7/12 px-4">
+            <h2 class="text-4xl font-semibold text-white">Apoya la causa (de aprendizaje)</h2>
+            <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
+              Esta ONG es ficticia, pero la intención es muy real: tener una base limpia para probar GTM, GA4, eventos,
+              consent, chatbots y experimentos A/B sin fricción.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap mt-12 justify-center">
+          <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="200">
+            <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <i class="fas fa-tag text-xl"></i>
+            </div>
+            <h5 class="text-xl mt-5 font-semibold text-white">Naming de eventos</h5>
+            <p class="mt-2 mb-4 text-gray-500">
+              Definimos convenciones claras para que cada click tenga sentido y no sea un “event_123”.
+            </p>
+          </div>
+
+          <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="400">
+            <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <i class="fas fa-vial text-xl"></i>
+            </div>
+            <h5 class="text-xl mt-5 font-semibold text-white">A/B listo</h5>
+            <p class="mt-2 mb-4 text-gray-500">
+              IDs estables, secciones modulares y espacio para variantes sin reescribir todo el HTML.
+            </p>
+          </div>
+
+          <div class="w-full lg:w-3/12 px-4 text-center" data-aos="fade-in" data-aos-delay="600">
+            <div class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <i class="fas fa-lock text-xl"></i>
+            </div>
+            <h5 class="text-xl mt-5 font-semibold text-white">Privacidad y control</h5>
+            <p class="mt-2 mb-4 text-gray-500">
+              Perfecto para probar consentimiento, modos de tracking y buenas prácticas sin “magia negra”.
+            </p>
+          </div>
+        </div>
+
+        <!-- Botón eliminado -->
+      </div>
+    </section>
+    <!-- End of Contact Section -->
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="relative bg-gray-300 pt-8 pb-6">
+    <div
+      class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+      style="height: 80px; transform: translateZ(0);"
+      aria-hidden="true"
+    >
+      <svg
+        class="absolute bottom-0 overflow-hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        version="1.1"
+        viewBox="0 0 2560 100"
+        x="0"
+        y="0"
+      >
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-6/12 px-4">
+          <h4 class="text-3xl font-semibold">TCK ONG</h4>
+          <h5 class="text-lg mt-0 mb-2 text-gray-700">
+            Una landing ficticia para probar instrumentación, UX y experimentación.
+          </h5>
+
+          <!-- Iconos eliminados -->
+        </div>
+
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <!-- List 1 -->
+            <div class="w-full lg:w-4/12 px-4 ml-auto">
+              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Secciones</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#proyecto">Proyecto</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#equipo">Equipo</a>
+                </li>
+                <!-- Apóyanos eliminado del footer -->
+              </ul>
+            </div>
+
+            <!-- List 2 -->
+            <div class="w-full lg:w-4/12 px-4">
+              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Recursos</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Guía de eventos (demo)</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Plan de experimentos (demo)</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">Política de privacidad (demo)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 border-gray-400" />
+
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+          <div class="text-sm text-gray-600 font-semibold py-1">
+            © <span id="year"></span> TCK ONG (ficticia). Hecha para experimentar con cariño.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      delay: 200,
+      duration: 1500,
+      once: false,
+      mirror: false,
+    });
+
+    function toggleNavbar(collapseID) {
+      const el = document.getElementById(collapseID);
+      if (!el) return;
+      el.classList.toggle("hidden");
+      el.classList.toggle("block");
+    }
+
+    (function () {
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <!-- Your scripts -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -315,36 +315,68 @@
    DONATION/PROJECT CARD (opcional)
    =========================================== */
 .tck-info-card {
-  background: var(--chat-bg-widget);
+  background: #2d3748;
   border-radius: 12px;
   overflow: hidden;
   margin: 8px 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   animation: fadeInUp 0.3s ease;
+  align-self: flex-start;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .tck-info-card-content {
   padding: 16px;
 }
 
+.tck-info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tck-info-card-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
 .tck-info-card-title {
-  color: var(--chat-text-light);
-  font-size: 15px;
+  color: #f7fafc;
+  font-size: 16px;
   font-weight: 600;
-  margin: 0 0 8px 0;
-  font-family: var(--font-serif, Georgia, serif);
+  margin: 0;
+  line-height: 1.3;
 }
 
 .tck-info-card-desc {
-  color: var(--chat-text-muted);
+  color: #a0aec0;
   font-size: 13px;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
   line-height: 1.5;
+}
+
+.tck-info-card-objective {
+  color: #ed8936;
+  font-size: 12px;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  padding: 10px 12px;
+  background: rgba(237, 137, 54, 0.15);
+  border-radius: 8px;
+  border-left: 3px solid #ed8936;
+}
+
+.tck-info-card-objective strong {
+  color: #f7fafc;
 }
 
 .tck-info-card-actions {
   display: flex;
   gap: 8px;
+  margin-top: 12px;
 }
 
 .tck-info-card-btn {
@@ -358,20 +390,22 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
+  display: inline-block;
 }
 
 .tck-info-card-btn.primary {
-  background: var(--chat-primary);
+  background: #ed8936;
   color: white;
 }
 
 .tck-info-card-btn.primary:hover {
-  background: var(--chat-primary-dark);
+  background: #dd6b20;
+  transform: translateY(-1px);
 }
 
 .tck-info-card-btn.secondary {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--chat-text-light);
+  color: #f7fafc;
 }
 
 .tck-info-card-btn.secondary:hover {

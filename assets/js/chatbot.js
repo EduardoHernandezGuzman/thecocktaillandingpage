@@ -183,19 +183,42 @@
 
   // Crear tarjeta informativa (para donaciones, proyectos, etc.)
   function createInfoCard(info) {
-    if (!info || !info.title) return null;
+    // Debug: ver qué llega
+    console.log('createInfoCard recibe:', info);
+    
+    // Validación estricta: debe ser un objeto con contenido
+    if (!info || typeof info !== 'object') return null;
+    
+    // Soportar tanto 'title' como 'name' del objeto
+    const title = info.title || info.name;
+    
+    // Si no hay título válido, no mostramos tarjeta
+    if (!title || typeof title !== 'string' || title.trim() === '') return null;
 
     const card = document.createElement('div');
     card.className = 'tck-info-card';
 
     const description = info.description || '';
+    const objective = info.objective || '';
     const actionText = info.actionText || 'Más información';
     const actionUrl = info.actionUrl || '#contacto';
+    const projectType = info.type || 'proyecto';
+
+    // Icono según tipo
+    let icon = '📋';
+    if (projectType === 'donación') icon = '💝';
+    else if (projectType === 'voluntariado') icon = '🙋';
+    else if (projectType === 'contacto') icon = '📧';
+    else if (projectType === 'proyecto') icon = '🌟';
 
     card.innerHTML = `
       <div class="tck-info-card-content">
-        <h4 class="tck-info-card-title">${info.title}</h4>
+        <div class="tck-info-card-header">
+          <span class="tck-info-card-icon">${icon}</span>
+          <h4 class="tck-info-card-title">${title}</h4>
+        </div>
         ${description ? `<p class="tck-info-card-desc">${description}</p>` : ''}
+        ${objective ? `<p class="tck-info-card-objective"><strong>Objetivo:</strong> ${objective}</p>` : ''}
         <div class="tck-info-card-actions">
           <a href="${actionUrl}" class="tck-info-card-btn primary">${actionText}</a>
         </div>
@@ -208,13 +231,32 @@
       actionBtn.addEventListener('click', () => {
         pushEvent('chatbot_cta_click', {
           conversation_id: state.conversationId,
-          cta_type: info.type || 'info',
-          cta_title: info.title
+          cta_type: projectType,
+          cta_title: title,
+          project_id: info.id || null
         });
       });
     }
 
     return card;
+  }
+
+  // Crear múltiples tarjetas (cuando donationDetails es un array)
+  function createInfoCards(donationDetails) {
+    console.log('createInfoCards recibe:', donationDetails);
+    
+    if (!donationDetails) return [];
+    
+    // Si es un array, crear una tarjeta por cada elemento
+    if (Array.isArray(donationDetails)) {
+      return donationDetails
+        .map(item => createInfoCard(item))
+        .filter(card => card !== null);
+    }
+    
+    // Si es un objeto único, crear una sola tarjeta
+    const card = createInfoCard(donationDetails);
+    return card ? [card] : [];
   }
 
   // Restaurar mensajes guardados
@@ -226,10 +268,12 @@
         div.textContent = msg.content;
         messagesEl.appendChild(div);
 
-        // Restaurar tarjetas si las hay
+        // Restaurar tarjetas si las hay (soporta array o objeto único)
         if (msg.infoCard) {
-          const card = createInfoCard(msg.infoCard);
-          if (card) messagesEl.appendChild(card);
+          const cards = createInfoCards(msg.infoCard);
+          cards.forEach(card => {
+            messagesEl.appendChild(card);
+          });
         }
       });
       messagesEl.scrollTop = messagesEl.scrollHeight;
@@ -411,22 +455,53 @@
 
       addMessage(reply, 'bot');
 
-      // Info card opcional (si el backend lo envía)
-      let infoCardData = null;
+      // Info cards (soporta objeto único o array de proyectos)
       if (data.donationDetails) {
-        infoCardData = data.donationDetails;
-        const card = createInfoCard(data.donationDetails);
-        if (card) {
+        const items = Array.isArray(data.donationDetails) 
+          ? data.donationDetails 
+          : [data.donationDetails];
+        
+        items.forEach(item => {
+          const title = item.title || item.name;
+          if (!title) return;
+          
+          let icon = '🌟';
+          if (item.type === 'donación') icon = '💝';
+          else if (item.type === 'voluntariado') icon = '🙋';
+          else if (item.type === 'contacto') icon = '📧';
+          
+          const card = document.createElement('div');
+          card.style.cssText = `
+            background: #374151;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 8px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 90%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          `;
+          
+          card.innerHTML = `
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <span style="font-size:22px;">${icon}</span>
+              <h4 style="color:#fff;font-size:15px;font-weight:600;margin:0;">${title}</h4>
+            </div>
+            ${item.description ? `<p style="color:#9ca3af;font-size:13px;margin:0 0 10px 0;line-height:1.5;">${item.description}</p>` : ''}
+            ${item.objective ? `<p style="color:#f59e0b;font-size:12px;margin:0 0 12px 0;padding:10px;background:rgba(245,158,11,0.15);border-radius:8px;border-left:3px solid #f59e0b;"><strong style="color:#fff;">Objetivo:</strong> ${item.objective}</p>` : ''}
+            <a href="#contacto" style="display:inline-block;background:#f59e0b;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Más información</a>
+          `;
+          
           messagesEl.appendChild(card);
-          messagesEl.scrollTop = messagesEl.scrollHeight;
-        }
+        });
+        
+        messagesEl.scrollTop = messagesEl.scrollHeight;
       }
 
       // Guardar mensaje del bot
       messages.push({
         role: 'assistant',
         content: reply,
-        infoCard: infoCardData
+        infoCard: data.donationDetails || null
       });
       saveMessages();
 

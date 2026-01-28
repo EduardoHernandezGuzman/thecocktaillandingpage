@@ -32,6 +32,9 @@
 
   <!-- Your styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Chatbot styles -->
+  <link rel="stylesheet" href="assets/css/chatbot.css" />
 </head>
 
 <body class="text-gray-800 antialiased">
@@ -608,5 +611,96 @@
 
   <!-- Your scripts -->
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Chatbot -->
+  <script src="assets/js/chatbot.js" defer></script>
+
+  <!-- ============================================
+       CHATBOT WIDGET HTML
+       ============================================ -->
+  
+  <!-- Toggle Button -->
+  <button
+    id="tck-chat-toggle"
+    class="tck-chat-toggle"
+    aria-label="Abrir chat"
+    aria-expanded="false"
+    aria-controls="tck-chat-widget"
+  >
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- Backdrop -->
+  <div id="tck-chat-backdrop" class="tck-chat-backdrop tck-hidden"></div>
+
+  <!-- Chat Widget -->
+  <div
+    id="tck-chat-widget"
+    class="tck-chat-widget tck-hidden"
+    role="dialog"
+    aria-hidden="true"
+    aria-labelledby="tck-chat-title"
+  >
+    <!-- Header -->
+    <header class="tck-chat-header">
+      <div class="tck-chat-header-info">
+        <div class="tck-chat-avatar">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <div>
+          <h2 id="tck-chat-title" class="tck-chat-title">TCK ONG</h2>
+          <p class="tck-chat-subtitle">Estamos aquí para ayudarte</p>
+        </div>
+      </div>
+      <div class="tck-chat-header-actions">
+        <button
+          id="tck-chat-reset"
+          class="tck-chat-header-btn"
+          aria-label="Nueva conversación"
+          title="Nueva conversación"
+        >
+          <i class="fas fa-redo-alt"></i>
+        </button>
+        <button
+          id="tck-chat-close"
+          class="tck-chat-header-btn"
+          aria-label="Cerrar chat"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Messages -->
+    <div id="tck-chat-messages" class="tck-chat-messages" role="log" aria-live="polite">
+      <!-- Los mensajes se añaden dinámicamente -->
+    </div>
+
+    <!-- Quick Actions -->
+    <div id="tck-quick-actions" class="tck-quick-actions" style="display: none;">
+      <button class="tck-quick-btn" data-action="donate">💝 Donar</button>
+      <button class="tck-quick-btn" data-action="projects">📋 Proyectos</button>
+      <button class="tck-quick-btn" data-action="volunteer">🙋 Voluntariado</button>
+      <button class="tck-quick-btn" data-action="contact">📧 Contacto</button>
+    </div>
+
+    <!-- Input Form -->
+    <form id="tck-chat-form" class="tck-chat-form" autocomplete="off">
+      <div class="tck-chat-input-wrapper">
+        <input
+          id="tck-chat-input"
+          type="text"
+          class="tck-chat-input"
+          placeholder="Escribe tu mensaje..."
+          aria-label="Mensaje"
+          maxlength="500"
+        />
+        <button type="submit" class="tck-chat-submit" aria-label="Enviar mensaje">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+
 </body>
 </html>

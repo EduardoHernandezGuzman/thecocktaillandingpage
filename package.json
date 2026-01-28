@@ -1,0 +1,22 @@
+{
+  "name": "tck-ong-landing",
+  "version": "1.0.0",
+  "description": "Landing page TCK ONG con chatbot integrado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["ong", "chatbot", "landing", "openai"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^5.2.1",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
